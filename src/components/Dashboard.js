@@ -265,7 +265,7 @@ document.getElementById('model-title').textContent = titleParam;
 
 const loader = new GLTFLoader();
 loader.load(
-  modelFile,
+  "https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce/public/assets/models/${fileName}", 
   (gltf) => {
       currentModel = gltf.scene;
       scene.add(currentModel);
