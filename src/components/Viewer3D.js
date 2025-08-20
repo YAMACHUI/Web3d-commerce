@@ -13,7 +13,8 @@ export class Viewer3D {
       'First Model': './assets/models/First.glb',
       'Second Model': './assets/models/second.glb',
       'Third Model': './assets/models/bois.glb',
-      'Human Model':'./assets/models/Dying.glb'
+      'Human Model':'./assets/models/Dying.glb',
+      'Aerien Model':'./assets/models/bird.glb'
     };
     
     this.currentModel = null;
@@ -53,7 +54,7 @@ export class Viewer3D {
       0.1,
       1000
     );
-    this.camera.position.z = 4;
+    this.camera.position.z = 7;
   }
 
   /**Initialisation des lumières */
@@ -131,7 +132,7 @@ export class Viewer3D {
       const size = box.getSize(new THREE.Vector3()).length();
       this.camera.position.z = size * 1.5;
     } else {
-      this.camera.position.z = 5;
+      this.camera.position.z = 3;
     }
     this.controls.reset();
   }
