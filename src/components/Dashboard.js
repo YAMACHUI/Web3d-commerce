@@ -257,15 +257,22 @@ let currentColor = new THREE.Color(0x00ffcc);
 
 // Charger le modèle depuis URL ou fallback
 
-const titleParam = new URLSearchParams(window.location.search).get('title') || 'Visualiseur 3D';
+// Charger le modèle depuis les paramètres d'URL ou utiliser le modèle par défaut
 const urlParams = new URLSearchParams(window.location.search);
-const modelFile = urlParams.get('model') || './${fileName}';
+const modelFromUrl = urlParams.get('model');
+const modelFile = modelFromUrl 
+  ? \`https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce/public/assets/models/\${modelFromUrl}\`
+  : 'https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce/public/assets/models/${fileName}';
 
-document.getElementById('model-title').textContent = titleParam;
+const titleFromUrl = urlParams.get('title');
+if (titleFromUrl) {
+    document.getElementById('model-title').textContent = titleFromUrl;
+    document.title = titleFromUrl;
+}
 
 const loader = new GLTFLoader();
 loader.load(
-  "https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce/public/assets/models/${fileName}", 
+  modelFile, 
   (gltf) => {
       currentModel = gltf.scene;
       scene.add(currentModel);
@@ -286,7 +293,7 @@ loader.load(
   undefined,
   (err) => {
       console.error(err);
-      alert("Erreur chargement: "+modelFile);
+      alert("Erreur chargement: " + modelFile);
   }
 );
 
