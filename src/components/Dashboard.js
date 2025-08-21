@@ -342,6 +342,7 @@ window.addEventListener('resize', ()=>{
 });
 </script>
 </body>
+</html>
 </html>`;
 
   // Zone affichant le code complet

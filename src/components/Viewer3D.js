@@ -14,7 +14,8 @@ export class Viewer3D {
       'Second Model': './assets/models/second.glb',
       'Third Model': './assets/models/bois.glb',
       'Human Model':'./assets/models/Dying.glb',
-      'Aerien Model':'./assets/models/bird.glb'
+      'Aerien Model':'./assets/models/bird.glb',
+      
     };
     
     this.currentModel = null;
