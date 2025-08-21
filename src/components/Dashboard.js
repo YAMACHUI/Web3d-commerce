@@ -262,8 +262,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const modelFromUrl = urlParams.get('model');
 const modelFile = modelFromUrl 
   ? \`https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce/public/assets/models/\${modelFromUrl}\`
-  : 'https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce@main/public/assets/models/${fileName}';
-  : 'https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce@master/public/assets/models/${fileName}';
+  : 'https://cdn.jsdelivr.net/gh/YAMACHUI/Web3d-commerce/public/assets/models/${fileName}';
 
 const titleFromUrl = urlParams.get('title');
 if (titleFromUrl) {
